@@ -9,6 +9,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+    
+  #HTTP request package.
+  dio: ^5.3.2
 
 dev_dependencies:
   flutter_test:
