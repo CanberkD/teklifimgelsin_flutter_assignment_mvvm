@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:teklifimgelsin_flutter_assignment_mvvm/features/form-page/model/form_button_model.dart';
+import 'package:teklifimgelsin_flutter_assignment_mvvm/features/offer-listing-page/model/form_result_model.dart';
+import 'package:teklifimgelsin_flutter_assignment_mvvm/product/constants/enums/arguments.dart';
 import 'package:teklifimgelsin_flutter_assignment_mvvm/product/constants/enums/button_list_items.dart';
+import 'package:teklifimgelsin_flutter_assignment_mvvm/product/navigation/route_names.dart';
 part 'form_page_view_model.g.dart';
 
 class FormPageViewModel extends _FormPageViewModelBase with _$FormPageViewModel{
@@ -87,7 +90,12 @@ abstract class _FormPageViewModelBase with Store {
 
   void formCompleted(BuildContext context){
     //TeklifimGelsin
-
+    FormResultModel formResultModel = FormResultModel(
+      age: selectedAgeIndex+1, 
+      spendingHabitsList: spendingHabitsList,
+      expectationsList: expectationsList,
+    );
+    Navigator.pushNamed(context, ProjectRoutes.offerListingPage.name, arguments: {Arguments.FORM_RESULT_MODEL: formResultModel});
   }
 
   //----------FROM PAGE GENERAL
