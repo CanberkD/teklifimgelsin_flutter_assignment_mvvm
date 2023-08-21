@@ -95,7 +95,7 @@ abstract class _FormPageViewModelBase with Store {
       spendingHabitsList: spendingHabitsList,
       expectationsList: expectationsList,
     );
-    Navigator.pushNamed(context, ProjectRoutes.offerListingPage.name, arguments: {Arguments.FORM_RESULT_MODEL: formResultModel});
+    Navigator.pushNamed(context, ProjectRoutes.offerListingPage.name, arguments: {Arguments.formResultModel: formResultModel});
   }
 
   //----------FROM PAGE GENERAL
