@@ -16,31 +16,33 @@ class ExtendedCardPageView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black.withOpacity(0.5),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: SizingConstants.horizontalPadding, vertical: SizingConstants.verticalPadding),
-        child: Container(
-          color: Colors.transparent,
-          child: Center(
-            child: Hero(
-              tag: index,
-              child: Material(
-                type: MaterialType.transparency,
-                child: OfferListItem(
-                  cardName: item.cardName ?? '',
-                  imgUrl: item.imgUrl ?? '',
-                  isSponsored: item.sponsored == 0 ? false : true,
-                  rating: item.rating ?? 0,
-                  applyUrl: item.url ?? '',
-                  annualPayment: item.annualPayment?.toInt() ?? 0,
-                  cashAdvanceInterest: item.cashAdvanceInterest?.toDouble() ?? 0,
-                  overdueInterest: item.overdueInterest?.toDouble() ?? 0,
-                  shoppingInterest: item.shoppingInterest?.toDouble() ?? 0,
-                  isExtendedCardView: true,
+      body: Stack(
+        children: [
+          Positioned.fill(child: GestureDetector(onTap: (){Navigator.pop(context);}),),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: SizingConstants.horizontalPadding, vertical: SizingConstants.verticalPadding),
+            child: Center(
+              child: Hero(
+                tag: index,
+                child: Material(
+                  type: MaterialType.transparency,
+                  child: OfferListItem(
+                    cardName: item.cardName ?? '',
+                    imgUrl: item.imgUrl ?? '',
+                    isSponsored: item.sponsored == 0 ? false : true,
+                    rating: item.rating ?? 0,
+                    applyUrl: item.url ?? '',
+                    annualPayment: item.annualPayment?.toInt() ?? 0,
+                    cashAdvanceInterest: item.cashAdvanceInterest?.toDouble() ?? 0,
+                    overdueInterest: item.overdueInterest?.toDouble() ?? 0,
+                    shoppingInterest: item.shoppingInterest?.toDouble() ?? 0,
+                    isExtendedCardView: true,
+                  ),
                 ),
               ),
             ),
-          ),
-        ),
+          )
+        ],
       )
     );
   }

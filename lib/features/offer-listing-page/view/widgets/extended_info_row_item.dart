@@ -17,7 +17,7 @@ class ExtendedInfoRowItem extends StatelessWidget {
       child: Column(
         children: [
           Text(title, textAlign: TextAlign.center,),
-          Text( title == 'Yıllık Ödeme' ? '₺$value' : '%$value', style: Theme.of(context).textTheme.titleLarge,)
+          Text( title == 'Yıllık Ödeme' ? '₺$value' : '%$value', style: Theme.of(context).textTheme.titleLarge?.copyWith(fontSize: 15),)
         ],
       ),
     );

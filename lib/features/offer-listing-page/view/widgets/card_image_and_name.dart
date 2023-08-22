@@ -19,7 +19,7 @@ class CardImageAndName extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(cardName, style: Theme.of(context).textTheme.bodyLarge,)
+              Text(cardName, style: Theme.of(context).textTheme.bodyLarge, textAlign: TextAlign.center,)
             ],
           ),
         )
