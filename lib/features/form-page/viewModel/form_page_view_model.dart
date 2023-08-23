@@ -68,7 +68,7 @@ abstract class _FormPageViewModelBase with Store {
 
   void setFormTitles(){
     //Set form title list. This list can be retrieved with http response if necessary.
-    titleList = ["Kaç yaşındasın?", "Harcama alışkanlıkların neler?", "Kredi kartından beklendilerini sırala"];
+    titleList = ["Kaç yaşındasın?", "Harcama alışkanlıkların neler?", "Kredi kartından beklentilerini sırala"];
   }
 
   void onPageChanged(int index){
